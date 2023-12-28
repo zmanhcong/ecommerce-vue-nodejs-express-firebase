@@ -1,0 +1,27 @@
+{
+    "name": "ecommerce-vue-express",
+    "version": "1.0.0",
+    "description": "このプロジェクトは、基本的な E コマースシステムで、さまざまな種類の靴を販売しています。Vue.js、Node.js、MongoDB、および Firebase を使用して、基本的な技術を習得し、実践することを目的としています。",
+    "main": "index.js",
+    "scripts": {
+        "install:frontend": "cd frontend && npm install",
+        "install:backend": "cd backend && npm install",
+        "start:frontend": "cd frontend && npm start",
+        "start:backend": "cd backend && npm start",
+        "install:all": "npm run install:frontend && npm run install:backend",
+        "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zmanhcong/ecommerce-vue-nodejs-express-firebase.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/zmanhcong/ecommerce-vue-nodejs-express-firebase/issues"
+    },
+    "homepage": "https://github.com/zmanhcong/ecommerce-vue-nodejs-express-firebase#readme",
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}
