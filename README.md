@@ -1,3 +1,6 @@
+Click on the link below to move to the
+[English version](./README-ENGLISH.md)
+
 # E コマースプロジェクト
 
 ## 👟 プロジェクトについて
