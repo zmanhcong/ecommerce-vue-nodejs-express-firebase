@@ -2,8 +2,13 @@ import express from "express";
 import bodyParser from "body-parser";
 import { MongoClient } from "mongodb";
 import path from "path";
+const cors = require("cors");
 
 const app = express();
+
+// Enable All CORS Requests
+app.use(cors());
+
 app.use(bodyParser.json());
 
 // Get all products
