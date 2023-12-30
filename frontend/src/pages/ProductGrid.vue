@@ -25,11 +25,10 @@ export default {
 
 <style scoped>
 .grid-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
   margin-top: 16px;
-  gap: 30px;
-  max-width: 70%;
+  gap: 16px;
 }
 </style>

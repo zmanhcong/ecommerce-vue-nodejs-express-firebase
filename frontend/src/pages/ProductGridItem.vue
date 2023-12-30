@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="product-grid-item">
     <RouterLink :to="`/products/${product.id}`">
       <img :src="product.imageUrl" />
     </RouterLink>
@@ -32,6 +32,12 @@ export default {
   padding: 20px;
   position: relative;
   width: 32%;
+}
+
+.product-grid-item {
+  box-shadow: 0px 2px 5px #888;
+  border-radius: 8px;
+  padding: 20px;
 }
 
 .product-name {

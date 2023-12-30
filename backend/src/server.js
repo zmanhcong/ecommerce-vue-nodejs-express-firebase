@@ -76,7 +76,6 @@ app.post("/api/users/:userId/cart", async (req, res) => {
     try {
         const { userId } = req.params;
         const { productId } = req.body;
-        console.log("🚀 log of productId:", productId);
 
         const client = await MongoClient.connect("mongodb://localhost:27017", {
             useNewUrlParser: true,

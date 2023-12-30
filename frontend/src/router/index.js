@@ -10,7 +10,7 @@ const router = createRouter({
       meta: {
         layout: "default",
       },
-      name: "Products",
+      name: "ProductPage",
       component: () => import("../pages/ProductsPage.vue"),
     },
     {
@@ -18,8 +18,16 @@ const router = createRouter({
       meta: {
         layout: "default",
       },
-      name: "Products",
+      name: "Home",
       component: () => import("../pages/ProductsPage.vue"),
+    },
+    {
+      path: "/products/:id",
+      meta: {
+        layout: "default",
+      },
+      name: "product-details",
+      component: () => import("../pages/ProductPageDetail.vue"),
     },
   ],
 });
