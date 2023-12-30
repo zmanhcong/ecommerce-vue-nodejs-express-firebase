@@ -35,7 +35,7 @@ export default {
 }
 
 .product-grid-item {
-  box-shadow: 0px 2px 5px #888;
+  box-shadow: 1px -3px 29px -5px rgba(0, 0, 0, 0.41);
   border-radius: 8px;
   padding: 20px;
 }

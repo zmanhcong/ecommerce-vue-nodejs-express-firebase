@@ -29,7 +29,25 @@ const router = createRouter({
       name: "product-details",
       component: () => import("../pages/ProductPageDetail.vue"),
     },
+    {
+      path: "/carts",
+      meta: {
+        layout: "default",
+      },
+      name: "carts",
+      component: () => import("../pages/ProductPageDetail.vue"),
+    },
   ],
+
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else if (to.hash) {
+      return { selector: to.hash };
+    } else {
+      return { top: 0 };
+    }
+  },
 });
 
 export default router;

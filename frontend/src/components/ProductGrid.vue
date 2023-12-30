@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import ProductGridItem from "@/pages/ProductGridItem.vue";
+import ProductGridItem from "@/components/ProductGridItem.vue";
 
 export default {
   name: "ProductGrid",
@@ -25,6 +25,7 @@ export default {
 
 <style scoped>
 .grid-wrap {
+  padding-top: 50px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 

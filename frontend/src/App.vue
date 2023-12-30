@@ -1,16 +1,28 @@
 <template>
   <div class="content">
-    <router-view />
+    <Navbar />
+    <transition name="fade">
+      <router-view />
+    </transition>
   </div>
 </template>
 
 <script>
+import Navbar from "./components/Navbar.vue";
+
 export default {
   name: "App",
+  components: {
+    Navbar,
+  },
 };
 </script>
 
 <style>
+html {
+  overflow-y: scroll;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,6 +36,7 @@ export default {
   margin: 0 auto;
   max-width: 1000px;
   padding: 0 20px;
+  position: relative;
 }
 
 button {

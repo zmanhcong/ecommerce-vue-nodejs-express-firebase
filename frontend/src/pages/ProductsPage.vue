@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ProductGrid from "@/pages/ProductGrid.vue";
+import ProductGrid from "@/components/ProductGrid.vue";
 import { ref, onMounted } from "vue";
 import axios from "axios";
 
