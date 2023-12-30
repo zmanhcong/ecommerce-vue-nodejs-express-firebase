@@ -1,12 +1,12 @@
 <template>
-    <div>
-        <h1>Product Page Detail</h1>
-    </div>
+  <div>
+    <h1>Page Detail</h1>
+  </div>
 </template>
 
 <script>
 export default {
-    name: "ProductPageDetail",
+  name: "ProductPageDetail",
 };
 </script>
 

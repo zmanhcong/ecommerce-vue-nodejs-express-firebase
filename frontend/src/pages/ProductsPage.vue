@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Product Page</h1>
     <ProductGrid :products="products" />
   </div>
 </template>
@@ -12,6 +11,7 @@ import axios from "axios";
 
 export default {
   name: "ProductPage",
+
   components: {
     ProductGrid,
   },
@@ -28,11 +28,7 @@ export default {
       fetchProducts();
     });
 
-    return { fetchProducts };
+    return { products };
   },
 };
 </script>
-
-<style>
-/* Add your custom styles here */
-</style>
