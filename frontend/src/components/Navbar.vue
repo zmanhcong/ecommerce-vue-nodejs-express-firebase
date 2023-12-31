@@ -3,7 +3,7 @@
     <router-link to="/products" id="products-link">
       <h1>Home</h1>
     </router-link>
-    <router-link to="/cart" id="cart-link">
+    <router-link to="/carts" id="cart-link">
       <button>Shopping Cart</button>
     </router-link>
   </div>
@@ -18,7 +18,7 @@ export default {
 <style scoped>
 #nav-bar {
   border-bottom: 1px solid #ddd;
-  height: 75px;
+  height: 45px;
   width: 100%;
 }
 

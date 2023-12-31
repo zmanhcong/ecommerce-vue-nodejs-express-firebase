@@ -1,6 +1,6 @@
 <template>
+  <Navbar />
   <div class="content">
-    <Navbar />
     <transition name="fade">
       <router-view />
     </transition>
@@ -29,14 +29,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 35px;
 }
 
 .content {
   margin: 0 auto;
   max-width: 1000px;
   padding: 0 20px;
-  position: relative;
 }
 
 button {

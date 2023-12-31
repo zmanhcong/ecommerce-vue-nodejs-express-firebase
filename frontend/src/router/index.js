@@ -35,7 +35,7 @@ const router = createRouter({
         layout: "default",
       },
       name: "carts",
-      component: () => import("../pages/ProductPageDetail.vue"),
+      component: () => import("../pages/CartPage.vue"),
     },
   ],
 
