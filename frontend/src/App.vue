@@ -32,6 +32,12 @@ html {
   margin-top: 35px;
 }
 
+#page-wrap {
+  margin: auto;
+  max-width: 800px;
+  min-height: 100vh;
+}
+
 .content {
   margin: 0 auto;
   max-width: 1000px;

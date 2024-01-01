@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="page-wrap">
     <ProductGrid :products="products" />
   </div>
 </template>

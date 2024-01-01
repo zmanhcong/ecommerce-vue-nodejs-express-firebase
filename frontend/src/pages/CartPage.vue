@@ -7,39 +7,39 @@
           <img :src="item.imageUrl" class="cart-img" />
           <div class="cart-desc">
             <h2 class="cart-title">{{ item.name }}</h2>
-            <h4 class="cart-price">Price: ${{ item.price }}</h4>
+            <p class="cart-price">Price: ${{ item.price }}</p>
           </div>
         </div>
-        <div class="cart-right">
+        <div class="cart_remove-btn">
           <button class="cart-button" @click="removeFromCart(item.id)">
             Remove from Cart
           </button>
         </div>
       </div>
     </div>
+    <div class="cart-total">Total: ${{ totalPrice }}</div>
+
+    <RouterLink :to="`/`">
+      <button class="btn">Proceed to Checkout</button>
+    </RouterLink>
   </div>
 </template>
 
 <script>
-import { onMounted, ref } from "vue";
-import { useRoute } from "vue-router";
+import { computed, onMounted, ref } from "vue";
 import axios from "axios";
 
 export default {
   name: "CartPage",
   setup() {
     const cartItems = ref([]);
-    const route = useRoute();
-    const productId3f = ref(route.params.id);
 
-    const fetchCartItems = async () => {
+    // fetch cart items
+    onMounted(async () => {
       const { data } = await axios.get(
         `${process.env.VUE_APP_BASE_URL}/api/users/12345/cart`
       );
       cartItems.value = data;
-    };
-    onMounted(() => {
-      fetchCartItems();
     });
 
     // remove from cart
@@ -47,21 +47,40 @@ export default {
       await axios.delete(
         `${process.env.VUE_APP_BASE_URL}/api/users/12345/cart/${productId}`
       );
+
       //update cart items by filter
       cartItems.value = cartItems.value.filter((item) => item.id !== productId);
-      console.log("removed from cart");
     };
 
-    return { cartItems, removeFromCart, productId3f };
+    // calculate total
+    const totalPrice = computed(() => {
+      return cartItems.value.reduce((acc, item) => {
+        return acc + Number(item.price);
+      }, 0);
+    });
+
+    return { cartItems, removeFromCart, totalPrice };
   },
 };
 </script>
 
 <style scoped>
+.btn {
+  width: 100%;
+  margin-top: 20px;
+}
+
 h1 {
   text-align: left;
   border-bottom: 1px solid black;
   padding-bottom: 10px;
+}
+
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
 }
 .cart-item {
   display: flex;
@@ -76,12 +95,11 @@ h1 {
   margin-top: 20px;
 }
 
-.cart-right {
+.cart_remove-btn {
   margin-top: 20px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   width: 50%;
 }
 
@@ -92,11 +110,7 @@ h1 {
 }
 
 .cart-desc {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
+  margin-left: 15px;
 }
 .cart-title {
   margin: 0;
@@ -105,5 +119,14 @@ h1 {
 .cart-price {
   font-weight: 400;
   margin-top: 10px;
+  text-align: left;
+}
+
+.cart-total {
+  text-align: right;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 </style>

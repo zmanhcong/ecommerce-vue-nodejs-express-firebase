@@ -1,5 +1,5 @@
 <template>
-  <div class="page-detail-content">
+  <div id="page-wrap">
     <div class="page-wrap" v-if="productDetail">
       <div class="img-wrap">
         <img :src="productDetail.imageUrl" />
