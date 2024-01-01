@@ -47,9 +47,10 @@ export default {
 
     const productId = ref(route.params.id);
     const productDetail = ref({});
+
     const fetchProductDetail = async () => {
       const { data } = await axios.get(
-        `${process.env.VUE_APP_BASE_URL}/api/products/${productId.value}`
+        `http://localhost:8001/api/products/${productId.value}`
       );
       productDetail.value = data;
     };
@@ -64,12 +65,9 @@ export default {
 
     const addToCart = async () => {
       await axios
-        .post(
-          `${process.env.VUE_APP_BASE_URL}/api/users/${userId.value}/cart`,
-          {
-            productId: productId.value,
-          }
-        )
+        .post(`http://localhost:8001/api/users/${userId.value}/cart`, {
+          productId: productId.value,
+        })
         .then((response) => {
           console.log(response);
           isAddtoCart.value = true;
@@ -86,8 +84,9 @@ export default {
 
     const fetchCartItems = async () => {
       const { data } = await axios.get(
-        `${process.env.VUE_APP_BASE_URL}/api/users/${userId.value}/cart`
+        `http://localhost:8001/api/users/12345/cart`
       );
+
       cartItems.value = data;
     };
 

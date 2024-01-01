@@ -37,7 +37,7 @@ export default {
     // fetch cart items
     onMounted(async () => {
       const { data } = await axios.get(
-        `${process.env.VUE_APP_BASE_URL}/api/users/12345/cart`
+        `http://localhost:8001/api/users/12345/cart`
       );
       cartItems.value = data;
     });
@@ -45,7 +45,7 @@ export default {
     // remove from cart
     const removeFromCart = async (productId) => {
       await axios.delete(
-        `${process.env.VUE_APP_BASE_URL}/api/users/12345/cart/${productId}`
+        `http://localhost:8001/api/users/12345/cart/${productId}`
       );
 
       //update cart items by filter

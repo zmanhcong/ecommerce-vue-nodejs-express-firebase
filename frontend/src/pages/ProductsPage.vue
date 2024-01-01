@@ -18,9 +18,7 @@ export default {
   setup() {
     const products = ref([]);
     const fetchProducts = async () => {
-      const { data } = await axios.get(
-        `${process.env.VUE_APP_BASE_URL}/api/products`
-      );
+      const { data } = await axios.get("http://localhost:8001/api/products");
       products.value = data;
     };
 
