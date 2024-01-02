@@ -49,7 +49,6 @@ app.get("/api/products/:productId", async (req, res) => {
 app.get("/api/users/:userId/cart", async (req, res) => {
     try {
         const { userId } = req.params;
-        console.log(userId);
         const client = await MongoClient.connect("mongodb://localhost:27017", {
             useNewUrlParser: true,
             useUnifiedTopology: true,
